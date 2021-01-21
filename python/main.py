@@ -164,9 +164,9 @@ def render():
     image = Image.open(img2)
     resize(image).save('./resource/128bit.png')
     clips = [ImageClip(f'./resource/{m}').set_duration(1) for m in ['1bit.png', '2bit.png', '4bit.png', '8bit.png']]
-    clips.append(ImageClip('./resource/16bit.png').set_duration(1.5))
-    clips.append(ImageClip('./resource/32bit.png').set_duration(1.7))
-    clips.append(ImageClip('./resource/64bit.png').set_duration(1.6))
+    clips.append(ImageClip('./resource/16bit.png').set_duration(1.6))
+    clips.append(ImageClip('./resource/32bit.png').set_duration(1.8))
+    clips.append(ImageClip('./resource/64bit.png').set_duration(2))
     clips.append(ImageClip('./resource/128bit.png').set_duration(1))
     concat_clip = concatenate_videoclips(clips, method="compose")
     concat_clip.audio = AudioFileClip(r"./resource/audio.mp3")
